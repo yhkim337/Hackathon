@@ -22,5 +22,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', soldierLetter.views.base, name='base'),
+    path('', soldierLetter.views.login, name='login'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
