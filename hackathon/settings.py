@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'soldierLetter',
     'bootstrap4',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [

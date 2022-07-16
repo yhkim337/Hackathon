@@ -11,4 +11,3 @@ def base(request):
     encourage = Encourage.objects
     game = Game.objects
     return render(request, 'soldierLetter/base.html', {'finance_news':finance_news, 'finance_data':finance_data, 'sport_news':sport_news, 'tip':tip, 'encourage':encourage, 'game':game})
-
