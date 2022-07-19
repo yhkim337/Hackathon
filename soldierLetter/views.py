@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from django.utils import timezone
 from .models import SportNewsData, FinanceNewsData, FinanceData, Tip, Encourage, Game
 
 
 # Create your views here.
 def base(request):
-    finance_news = FinanceNewsData.objects
+    finance_news = FinanceNewsData.objects.all().order_by('-created_at')[:7]
     finance_data = FinanceData.objects.all().order_by('-created_at')[:5]
     sport_news = SportNewsData.objects.all().order_by('-created_at')[:5]
     tip = Tip.objects
