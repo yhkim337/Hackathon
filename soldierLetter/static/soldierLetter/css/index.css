@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'EF_WAKEUP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_WAKEUP.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    background-color:rgb(255, 247, 238);
+    font-family: 'EF_WAKEUP';
+    margin: 0;
+}
+
+header {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: lightgray;
+    height: 30px;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    height: 20px;
+    width: auto;
+}
+
+.menu-navigator {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    padding: 0px 10px;
+}
+
+.service-name {
+    margin: 0px 10px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 300px;
+    background-color: white;
+}
+
+.service-image {
+    height: 500px;
+    width: auto;
+}
+
+.sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 300px;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.content {
+    font-size: 18px;
+}
+
+.summary {
+    padding: 20px 0px;
+    width: 500px;
+    line-height: 200%;
+}
+
+.example-image {
+    height: 300px;
+}
+
+#example {
+    font-size: 13px;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+#notice {
+    display: block;
+}
+
+#review {
+    display: block;
+}
+
+#faq {
+    display: block;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 300px;
+    background-color: white;
+    height: 120px;
+}
+
+#footer-image {
+    height: 80px;
+}
+
+.gradient {
+
+}
+
+button {
+    position: fixed;
+    top: 88%; left: 50%;
+    transform: translate(-50%, 0);
+    background-color: lightgray;
+    border: 2px solid black;
+    font-family: 'EF_WAKEUP';
+    font-size: 30px;
+    height: 60px;
+    width: 250px;
+    box-shadow: 5px 5px;
+}
+
+#introduce-section {
+    display: flex;
+    padding: 0px;
+}
