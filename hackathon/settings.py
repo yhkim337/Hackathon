@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sass_processor',
     'soldierLetter',
+    'bootstrap4',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [

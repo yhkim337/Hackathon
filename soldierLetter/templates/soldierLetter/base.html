@@ -2,17 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>인편 대신 전해드립니다</title>
         {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+        crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'soldierLetter/css/index.css' %}">
+        <script src="{% static 'soldierLetter/js/login.js' %}"></script>
+        <script src="{% static 'soldierLetter/js/index.js' %}"></script>
     </head>
 
     <body>
         <header>
             <div class="icon-container">
+                <a href=''>
                 <img class="icon" src="{% static 'soldierLetter\image\envelope-open-text-solid.svg' %}">
+                인편 대신 전해드립니다
                 <div class="service-name">
-                    인편 대신 전해드립니다
                 </div>
             </div>
             <nav class="menu-navigator">
@@ -30,7 +42,7 @@
                 </a>
             </nav>
         </header>
-        
+
         <section class="main-container">
             <section class="introduction sec" id="introduce-section">
                 <div class="introduce">
@@ -45,86 +57,94 @@
             <img class="service-image" src="{% static 'soldierLetter\image\인편 대신 전해드립니다3.jpeg' %}">
         </section>
         
+        <section class="carousel">
+        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+            {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script> {% endcomment %}
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+            <script>
+            $('.carousel').carousel({
+            interval: 5000
+            })
+            </script>
 
-        <!-- 슬라이드 배너 1 -->
-        <section>
-            <section class="news-container sec">
-                <div class="content">
-                    <div class="explain title">
-                        스포츠
-                    </div>
-                    <div class="summary">
-                        간단한 설명글을 적어주면 될 것 같은데 뭐라고 적어야 할지 도저히 모르겠어서 아무말 대잔치를 하는 중입니다...... 껄껄껄,, 그래도 일단 몇 줄은 더 적어야 실제 내용이 들어갔을 때 어떤 모습으로 보일지 알 수 있을 것 같아 더 끄적이고 있습니다,,,
-                        
-                    </div>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                        <section class="news-container sec">
+                            <div class="content">
+                                <div class="explain title">
+                                    스포츠
+                                </div>
+                                <div class="summary">
+                                    어제 있었던 핵심 스포츠 뉴스들을 보내드립니다.                        
+                                </div>
+                            </div>
+                            <div class="example" id="example">
+                            {% for sport_news in sport_news.all%}
+                                <p>{{sport_news.index}}.{{sport_news.title}}</p>
+                                <p>{{sport_news.summary}}</p>
+                            {% endfor%}
+                            </div>
+                        </section>
                 </div>
-                <div class="example">
-                    <img class="example-image" src="sports.jpg_large">
+                <div class="carousel-item">
+                    <section class="news-container sec">
+                        <div class="content">
+                            <div class="explain title">
+                                주식
+                            </div>
+                            <div class="summary">
+                                어제 있었던 주요 주식 뉴스들과 관심 종목을 보내드립니다.                      
+                            </div>
+                        </div>
+                        <div class="example" id="example">
+                            {% for finance_data in finance_data.all%}
+                                <p>{{finance_data.index}}.{{finance_data.name}} : {{finance_data.price}}</p>
+                            {% endfor%}
+                            {% for finance_news in finance_news.all%}
+                                <p>{{finance_news.title}}</p>
+                            {% endfor%}
+                        </div>
+                    </section>
                 </div>
-            </section>
-
-            <section class="news-container sec">
-                <div class="example">
-                    <img class="example-image" src="stock.jpeg">
+                <div class="carousel-item">
+                    <section class="news-container sec">
+                        <div class="content">
+                            <div class="explain title">
+                                팁과 응원메세지
+                            </div>
+                            <div class="summary">
+                                무료한 훈련소 시간을 빠르게 보내말한 게임,
+                                <br> 힘이 될 수 있는 팁과 응원메세지를 보내드립니다.
+                            </div>
+                        </div>
+                        <div class="example" id="example">
+                            {% for sport_news in sport_news.all%}
+                                <p>{{sport_news.index}}.{{sport_news.title}}</p>
+                                <p>{{sport_news.summary}}</p>
+                            {% endfor%}
+                        </div>
+                    </section>
                 </div>
-                <div class="content">
-                    <div class="explain title">
-                        주식
-                    </div>
-                    <div class="summary">
-                        ??? : 화성 갈끄니까(?)~~~~~~~~~~~~~
-                    </div>
-                </div>
-            </section>
+            </div>
+            <a class="carousel-control-prev" href="#carouselIndicators" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselIndicators" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
         </section>
 
-        <!-- 슬라이드 배너 2 -->
-        <section>
-            <section class="news-container sec">
-                <div class="explain title">
-                    응원메시지
-                </div>
-                <div class="content">
-                    <div class="summary">
-                        간단한 설명글
-                    </div>
-                    <div class="example">
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="news-container sec">
-                <div class="explain title">
-                    1일 1게임
-                </div>
-                <div class="content">
-                    <div class="summary">
-                        간단한 설명글
-                    </div>
-                    <div class="example">
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="news-container sec">
-                <div class="explain title">
-                    훈련소 Tip
-                </div>
-                <div class="content">
-                    <div class="summary">
-                        간단한 설명글
-                    </div>
-                    <div class="example">
-
-                    </div>
-                </div>
-            </section>
-        </section>
-        <!-- 슬라이드 배너 2 끝 -->
-
-        <section class="sec" id="notice">
+        <div id="information">
+            <section class="sec" id="notice">
             <div class="title">
                 공지사항
             </div>
@@ -137,9 +157,8 @@
                 6. <br>
                 7. <br>
             </div>
-        </section>
-
-        <section class="sec" id="review">
+            </section>
+            <section class="sec" id="review">
             <div class="title">
                 후기
             </div>
@@ -151,9 +170,9 @@
                 ??? : Thank you!<br>
                 ??? : 谢谢!<br>
             </div>
-        </section>
+            </section>
 
-        <section class="sec" id="faq">
+            <section class="sec" id="faq">
             <div class="title">
                 자주 묻는 질문
             </div>
@@ -173,14 +192,107 @@
                 Q. 我爱你<br>
                 A. 我也爱你<br>
             </div>
-        </section>
-        <div class="gradient">
-            <button>
-                구독하기
-            </button>
+            </section>
         </div>
+
+        <div class="gradient">
+            
+        <div id='to-top-icon'>
+            <img id='to-top' src="{% static 'soldierLetter\image\arrow-up-solid.svg' %}">
+            <script src="{% static 'soldierLetter/js/index.js' %}"></script>
+        </div>
+
+            <button onclick="registForm()" name="btn">구독하기</button>
+        </div>
+        <div id="regist" style="display: none">
+            <form method="POST">
+                <table>
+                    <caption>신청하기</caption>
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" name="id" placeholder="인대전"/> 
+                    </tr>
+                    <tr>
+                        <td>군 종류</td>
+                        <td><select name="category">
+                            <option value="none" selected>=== 선택 ===</option>
+                            <option value="army">육군</option>
+                            <option value="air">공군</option>
+                            <option value="navy">해군</option>
+                            <option value="marine">해병대</option>
+                            <option value="public">공익</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+						<td>입대날짜</td>
+						<td><input type="date" name="date"/>
+					</tr>
+                    <tr>
+                        <td>입영 훈련소</td>
+                        <td><select name="category">
+                            <option value="none" selected>=== 선택 ===</option>
+                            <option value="army1">1사단</option>
+                            <option value="army3">3사단</option>
+                            <option value="army5">5사단</option>
+                            <option value="army6">6사단</option>
+                            <option value="army7">7사단</option>
+                            <option value="army9">9사단</option>
+                            <option value="army12">12사단</option>
+                            <option value="army15">15사단</option>
+                            <option value="army21">21사단</option>
+                            <option value="army25">25사단</option>
+                            <option value="army27">27사단</option>
+                            <option value="army28">28사단</option>
+                            <option value="army31">31사단</option>
+                            <option value="army32">32사단</option>
+                            <option value="army35">35사단</option>
+                            <option value="army36">36사단</option>
+                            <option value="army37">37사단</option>
+                            <option value="army39">39사단</option>
+                            <option value="army50">50사단</option>
+                            <option value="army51">51사단</option>
+                            <option value="army55">55사단</option>
+                            <option value="air">공군기초훈련단</option>
+                            <option value="navy">해군기초군사교육단</option>
+                            <option value="marine">해병대교육훈련단</option>
+                    </tr>
+                    <tr>
+						<td>전화번호</td>
+						<td><input type="tel" name="tel" placeholder="010-0000-0000"/>
+					</tr>
+                </table>
+                    <tr>
+                        <td><input type="checkbox" name="sports" value="sports">국내축구</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="sports" value="sports">해외축구</td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><input type="checkbox" name="sports" value="sports">국내야구</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="sports" value="sports">해외야구</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="sports" value="sports">농구</td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><input type="checkbox" name="stock" value="stock" onclick='toggleTextbox(this)'>주식</td>
+                        <input type='text' id='my_text' disabled />
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><input type="button" id="check" value="확인" onclick="closeWin()"/></td>
+                    </tr>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
+
     <footer>
         <img id="footer-image" src="{% static 'soldierLetter\image\인편 대신 전해드립니다.png' %}">
     </footer>
+
 </html>
