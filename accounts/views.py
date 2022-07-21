@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import auth 
 from django.shortcuts import redirect
+from django.http import JsonResponse
 
 def signup(request):
     if request.method  == 'POST':
@@ -22,6 +23,8 @@ def subscribe(request):
         user.profile.enter_date = request.POST['enter_date']
         user.profile.sub_type1 = request.POST['sub_type1']
         user.profile.sub_type2 = request.POST['sub_type2']
+        if request.POST['stock_type'] != None:
+            user.profile.stock_type = request.POST['stock_type']
         user.profile.subscribe = True
         user.save()
         return redirect('/intro')
@@ -52,3 +55,16 @@ def edit(request):
     sub_type2 = user.profile.sub_type2
 
     return render(request, 'accounts/edit.html', {'name':name, 'birthday':birthday, 'army_type':army_type, 'unit_type':unit_type, 'enter_date':enter_date, 'sub_type1':sub_type1, 'sub_type2':sub_type2})
+
+def check(request):
+    username = request.POST['content']
+    print('아이디 중복 체크')
+    try:
+        user = User.objects.get(username=username)
+    except:
+        user = None
+    if user is None:
+        duplicate = "pass"
+    else:
+        duplicate = "fail"
+    return JsonResponse({'duplicate': duplicate})
