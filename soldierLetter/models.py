@@ -26,16 +26,14 @@ class FinanceData(models.Model):
         return self.created_at.strftime("%Y-%m-%d")
 
 class Tip(models.Model):
-    title = models.CharField(max_length=10)
     content = models.CharField(max_length=30)
     def __str__(self):
-        return self.title
+        return self.content
 
 class Encourage(models.Model):
-    title = models.CharField(max_length=10)
     content = models.CharField(max_length=30)
     def __str__(self):
-        return self.title
+        return self.content
 
 class Game(models.Model):
     title = models.CharField(max_length=10)
@@ -43,3 +41,9 @@ class Game(models.Model):
     def __str__(self):
         return self.title
 
+class Notice(models.Model):
+    title = models.CharField(max_length=30)
+    content = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+    def __str__(self):
+        return self.title

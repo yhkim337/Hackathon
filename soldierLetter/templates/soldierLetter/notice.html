@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div id="notice-title">
+  공지사항
+</div>
+
+<table>
+  <thead>
+      <tr>
+          <th id="first">번호</th>
+          <th id="second">제목</th>
+          <th id="third">등록일</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for notice in notices %}
+      <tr>
+          <td>{{notice.id}}</td>
+          <td onclick="showNoticeContent({{notice.id}})">{{notice.title}}</td>
+          <td id="notice-created">{{notice.created_at}}</td>
+      </tr>
+      <tr>
+        <td id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+<script src="{% static 'soldierLetter/js/notice.js' %}"></script>
+{% endblock content %}
