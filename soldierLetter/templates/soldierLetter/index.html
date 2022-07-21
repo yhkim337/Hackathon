@@ -115,6 +115,7 @@
                 {% for notice in notices %}
                 <div onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
                 <div id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</div>
+                <br>
                 {% endfor %}                
             </div>
             <a href="{% url 'notice'%}" class="more">더보기</a>
@@ -125,12 +126,11 @@
                 후기
             </div>
             <div class="summary">
-                ??? : 훈련병을 위한 최고의 맞춤형 서비스<br>
-                ??? : 덕분에 익절했습니다<br>
-                ??? : ...<br>
-                ??? : 감사합니다!<br>
-                ??? : Thank you!<br>
-                ??? : 谢谢!<br>
+                {% for review in reviews %}
+                <div onclick="showReviewContent({{review.id}})">{{review.id}}. {{review.title}}</div>
+                <div id="review-content-{{review.id}}" class="review-content" style="display:none">{{review.content}}</div>
+                <br>
+                {% endfor %}
             </div>
             <a href="{% url 'review'%}" class="more">더보기</a>
             </section>

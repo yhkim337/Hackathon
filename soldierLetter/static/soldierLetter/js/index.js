@@ -15,3 +15,14 @@ const showNoticeContent = (id) => {
     }
     
 };
+
+const showReviewContent = (id) => {
+    const text = document.getElementById(`review-content-${id}`);
+    if(text.style.display == "none"){
+        text.style.display = "table-cell";
+        text.setAttribute("colspan", "3")
+    } else{
+        text.style.display = "none"
+    }
+    
+};
