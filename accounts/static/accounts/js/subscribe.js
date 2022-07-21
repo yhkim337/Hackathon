@@ -4,6 +4,7 @@ const showfield1 = (name) => {
     } else{
         document.getElementById('div1').innerHTML='';
     } 
+
   }
 
 const showfield2 = (name) => {

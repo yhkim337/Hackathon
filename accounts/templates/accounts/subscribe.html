@@ -75,7 +75,7 @@
             구독뉴스 1:
             <br>
             <select name="sub_type1" onchange="showfield1(this.options[this.selectedIndex].value)">
-                <option value="" selected>=== 선택 ===</option>
+                <option selected disabled hidden>=== 선택 ===</option>
                 <option value="국내야구">국내야구</option>
                 <option value="해외야구">해외야구</option>
                 <option value="국내축구">국내축구</option>
@@ -89,8 +89,8 @@
             <br>
             구독뉴스 2:
             <br>
-            <select name="sub_type2" onchange="showfield2(this.options[this.selectedIndex].value)">
-                <option selected="selected">=== 선택 ===</option>
+            <select id="sub_type2" name="sub_type2" onchange="showfield2(this.options[this.selectedIndex].value)">
+                <option selected disabled hidden>=== 선택 ===</option>
                 <option value="국내야구">국내야구</option>
                 <option value="해외야구">해외야구</option>
                 <option value="국내축구">국내축구</option>

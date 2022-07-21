@@ -40,7 +40,7 @@
                 <a href="#service" class="menu">
                     서비스 소개
                 </a>
-                <a href="#notice" class="menu">
+                <a href="http://localhost:8000/intro/#notice" class="menu">
                     공지사항
                 </a>
                 <a href="#review" class="menu">
@@ -212,22 +212,19 @@
             <script src="{% static 'soldierLetter/js/index.js' %}"></script>
         </div>
 
-
+        <div class='gradient'>
         {% if user.is_authenticated %}
             {% if user.profile.subscribe == False %}
-                <a class='gradient' href="{% url 'subscribe'%}"><button name="btn">구독하기</button></a>
+                <a href="{% url 'subscribe'%}"><button name="btn">구독하기</button></a>
             {% endif %}
         {% else %}
             <a href="{% url 'login'%}"><button name="btn">구독하기</button></a>
         {% endif %}
+        </div>
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-        <div id='to-top-icon'>
-            <img id='to-top' src="{% static 'soldierLetter\image\arrow-up-solid.svg' %}">
-            <script src="{% static 'soldierLetter/js/index.js' %}"></script>
-        </div>
     </body>
 
     <footer>
