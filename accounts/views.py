@@ -23,7 +23,7 @@ def subscribe(request):
         user.profile.enter_date = request.POST['enter_date']
         user.profile.sub_type1 = request.POST['sub_type1']
         user.profile.sub_type2 = request.POST['sub_type2']
-        if request.POST['stock_type'] != None:
+        if (request.POST.get('stock_type', False) != False):
             user.profile.stock_type = request.POST['stock_type']
         user.profile.subscribe = True
         user.save()

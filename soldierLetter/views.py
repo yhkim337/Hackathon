@@ -5,15 +5,15 @@ from .models import SportNewsData, FinanceNewsData, FinanceData, Tip, Encourage,
 
 
 # Create your views here.
-def base(request):
+def index(request):
     finance_news = FinanceNewsData.objects.all().order_by('-created_at')[:7]
     finance_data = FinanceData.objects.all().order_by('-created_at')[:5]
     sport_news = SportNewsData.objects.all().order_by('-created_at')[:5]
     tip = Tip.objects
     encourage = Encourage.objects
     game = Game.objects
-    notice = Notice.objects
-    return render(request, 'soldierLetter/base.html', {'finance_news':finance_news, 'finance_data':finance_data, 'sport_news':sport_news, 'tip':tip, 'encourage':encourage, 'game':game, 'notice':notice})
+    notices = Notice.objects.all().order_by('created_at')[:3]
+    return render(request, 'soldierLetter/index.html', {'finance_news':finance_news, 'finance_data':finance_data, 'sport_news':sport_news, 'tip':tip, 'encourage':encourage, 'game':game, 'notices':notices})
 
 def notice(request):
     notices = Notice.objects.all()
