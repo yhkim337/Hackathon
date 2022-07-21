@@ -14,6 +14,7 @@ class Profile(models.Model):
     enter_date = models.CharField(max_length=15, blank=True)
     sub_type1 = models.CharField(max_length=15, blank=True)
     sub_type2 = models.CharField(max_length=15, blank=True)
+    stock_type = models.CharField(max_length=20, blank=True)
     def __str__(self):
         return f'id={self.id}, user_id={self.user.id}, name={self.name}'
     @receiver(post_save, sender=User)  
