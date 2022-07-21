@@ -15,7 +15,7 @@
 
 body {
   background-color:rgb(255, 247, 238);
-  font-family: 'EF_WAKEUP';
+  font-family: 'ROKAMedium';
   margin: 0;
 }
 
@@ -143,8 +143,8 @@ button {
   font-family: 'ROKAMedium';
   font-weight: bold;
   font-size: 30px;
-  height: 60px;
-  width: 250px;
+  /* height: 60px; */
+  /* width: 250px; */
 }
 
 #introduce-section {
@@ -181,6 +181,7 @@ button {
 }
 
 #to-top {
+  z-index: 100;
   position: fixed;
   top: 94%; left: 97%;
   height: 30px;
