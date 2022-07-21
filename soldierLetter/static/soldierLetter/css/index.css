@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+/* 강한육군체 */
+@font-face {
+  font-family: 'ROKAMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKAMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color:rgb(255, 247, 238);
   font-family: 'EF_WAKEUP';
@@ -12,12 +20,11 @@ body {
 }
 
 header {
-  /* position: fixed; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  background-color: lightgray;
+  background-color: white;
   height: 50px;
 }
 
@@ -59,9 +66,9 @@ a:visited {
 
 .main-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px 300px;
-  background-color: white;
+  background-color: #ffc949;
 }
 
 .service-image {
@@ -120,7 +127,7 @@ footer {
   align-items: center;
   padding: 0px 300px;
   background-color: white;
-  height: 120px;
+  height: 300px;
 }
 
 #footer-image {
@@ -133,11 +140,11 @@ button {
   transform: translate(-50%, 0);
   background-color: lightgray;
   border: 2px solid black;
-  font-family: 'EF_WAKEUP';
+  font-family: 'ROKAMedium';
+  font-weight: bold;
   font-size: 30px;
   height: 60px;
   width: 250px;
-  box-shadow: 5px 5px;
 }
 
 #introduce-section {
@@ -173,7 +180,17 @@ button {
   height: 500px;
 }
 
-.to-top {
-  float: right;
-  height: 50px;
+#to-top {
+  position: fixed;
+  top: 94%; left: 97%;
+  height: 30px;
+  width: auto;
+}
+
+.gradient {
+  position: fixed;
+  top:80%;
+  height: 20%;
+  width: 100%;
+  background: linear-gradient(rgba(255, 247, 238, 0), 75%, rgba(0, 0, 0, 0.7));
 }
