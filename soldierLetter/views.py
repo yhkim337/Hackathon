@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import SportNewsData, FinanceNewsData, FinanceData, Tip, Encourage, Game
+from django.http import HttpResponse
+from .models import SportNewsData, FinanceNewsData, FinanceData, Tip, Encourage, Game, Notice
 
 
 # Create your views here.
@@ -11,10 +12,13 @@ def base(request):
     tip = Tip.objects
     encourage = Encourage.objects
     game = Game.objects
-    return render(request, 'soldierLetter/base.html', {'finance_news':finance_news, 'finance_data':finance_data, 'sport_news':sport_news, 'tip':tip, 'encourage':encourage, 'game':game})
+    notice = Notice.objects
+    return render(request, 'soldierLetter/base.html', {'finance_news':finance_news, 'finance_data':finance_data, 'sport_news':sport_news, 'tip':tip, 'encourage':encourage, 'game':game, 'notice':notice})
 
 def notice(request):
-    return render(request, 'soldierLetter/notice.html')
+    notices = Notice.objects.all()
+    context = {'notices': notices}
+    return render(request, 'soldierLetter/notice.html', context)
 
 def review(request):
     return render(request, 'soldierLetter/review.html')

@@ -29,6 +29,7 @@ urlpatterns = [
     path('accounts/signup/', accounts.views.signup, name='signup'),
     path('accounts/subscribe/', accounts.views.subscribe, name='subscribe'),
     path('accounts/edit/', accounts.views.edit, name='edit'),
+    path('accounts/signup/check/', accounts.views.check, name='check'),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
