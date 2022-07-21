@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
 import soldierLetter.views
+import accounts.views
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', soldierLetter.views.base, name='base'),
+    path('intro/', include('soldierLetter.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', accounts.views.signup, name='signup'),
+    path('accounts/subscribe/', accounts.views.subscribe, name='subscribe'),
+    path('accounts/edit/', accounts.views.edit, name='edit'),
+
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

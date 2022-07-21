@@ -172,3 +172,8 @@ button {
 .news-container {
   height: 500px;
 }
+
+.to-top {
+  float: right;
+  height: 50px;
+}

@@ -28,6 +28,15 @@
                 </div>
             </div>
             <nav class="menu-navigator">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout'%}" class="menu">로그아웃</a>
+                    {% if user.profile.subscribe == True %}
+                        <a href="{% url 'edit' %}" class="menu">내정보 수정</a>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'login' %}" class="menu">로그인</a>
+                    <a href="{% url 'signup' %}" class="menu">회원가입</a>
+                {% endif %}
                 <a href="#service" class="menu">
                     서비스 소개
                 </a>
@@ -127,7 +136,7 @@
                         </div>
                         <div class="example" id="example">
                             {% for sport_news in sport_news.all%}
-                                <p>{{sport_news.index}}.{{sport_news.title}}</p>
+                                <p>--{{sport_news.title}}--</p>
                                 <p>{{sport_news.summary}}</p>
                             {% endfor%}
                         </div>
@@ -157,8 +166,11 @@
                 6. <br>
                 7. <br>
             </div>
-            </section>
-            <section class="sec" id="review">
+            <a href="{% url 'notice'%}" class="more">더보기</a>
+        </section>
+
+        <section class="sec" id="review">
+
             <div class="title">
                 후기
             </div>
@@ -170,7 +182,8 @@
                 ??? : Thank you!<br>
                 ??? : 谢谢!<br>
             </div>
-            </section>
+            <a href="{% url 'review'%}" class="more">더보기</a>
+        </section>
 
             <section class="sec" id="faq">
             <div class="title">
@@ -197,96 +210,20 @@
 
         <div class="gradient">
             
-        <div id='to-top-icon'>
-            <img id='to-top' src="{% static 'soldierLetter\image\arrow-up-solid.svg' %}">
-            <script src="{% static 'soldierLetter/js/index.js' %}"></script>
-        </div>
+            <div id='to-top-icon'>
+                <img id='to-top' src="{% static 'soldierLetter\image\arrow-up-solid.svg' %}">
+                <script src="{% static 'soldierLetter/js/index.js' %}"></script>
+            </div>
 
-            <button onclick="registForm()" name="btn">구독하기</button>
-        </div>
-        <div id="regist" style="display: none">
-            <form method="POST">
-                <table>
-                    <caption>신청하기</caption>
-                    <tr>
-                        <td>이름</td>
-                        <td><input type="text" name="id" placeholder="인대전"/> 
-                    </tr>
-                    <tr>
-                        <td>군 종류</td>
-                        <td><select name="category">
-                            <option value="none" selected>=== 선택 ===</option>
-                            <option value="army">육군</option>
-                            <option value="air">공군</option>
-                            <option value="navy">해군</option>
-                            <option value="marine">해병대</option>
-                            <option value="public">공익</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-						<td>입대날짜</td>
-						<td><input type="date" name="date"/>
-					</tr>
-                    <tr>
-                        <td>입영 훈련소</td>
-                        <td><select name="category">
-                            <option value="none" selected>=== 선택 ===</option>
-                            <option value="army1">1사단</option>
-                            <option value="army3">3사단</option>
-                            <option value="army5">5사단</option>
-                            <option value="army6">6사단</option>
-                            <option value="army7">7사단</option>
-                            <option value="army9">9사단</option>
-                            <option value="army12">12사단</option>
-                            <option value="army15">15사단</option>
-                            <option value="army21">21사단</option>
-                            <option value="army25">25사단</option>
-                            <option value="army27">27사단</option>
-                            <option value="army28">28사단</option>
-                            <option value="army31">31사단</option>
-                            <option value="army32">32사단</option>
-                            <option value="army35">35사단</option>
-                            <option value="army36">36사단</option>
-                            <option value="army37">37사단</option>
-                            <option value="army39">39사단</option>
-                            <option value="army50">50사단</option>
-                            <option value="army51">51사단</option>
-                            <option value="army55">55사단</option>
-                            <option value="air">공군기초훈련단</option>
-                            <option value="navy">해군기초군사교육단</option>
-                            <option value="marine">해병대교육훈련단</option>
-                    </tr>
-                    <tr>
-						<td>전화번호</td>
-						<td><input type="tel" name="tel" placeholder="010-0000-0000"/>
-					</tr>
-                </table>
-                    <tr>
-                        <td><input type="checkbox" name="sports" value="sports">국내축구</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="sports" value="sports">해외축구</td>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><input type="checkbox" name="sports" value="sports">국내야구</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="sports" value="sports">해외야구</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="sports" value="sports">농구</td>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><input type="checkbox" name="stock" value="stock" onclick='toggleTextbox(this)'>주식</td>
-                        <input type='text' id='my_text' disabled />
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><input type="button" id="check" value="확인" onclick="closeWin()"/></td>
-                    </tr>
-            </form>
+
+            {% if user.is_authenticated %}
+                {% if user.profile.subscribe == False %}
+                    <a href="{% url 'subscribe'%}"><button name="btn">구독하기</button></a>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'login'%}"><button name="btn">구독하기</button></a>
+            {% endif %}
+
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
