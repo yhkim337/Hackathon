@@ -228,6 +228,7 @@ button {
   height: 20%;
   width: 100%;
   background: linear-gradient(rgba(255, 247, 238, 0), 75%, rgba(0, 0, 0, 0.7));
+  z-index: -1;
 }
 
 table {
@@ -280,7 +281,7 @@ td {
 .notice-content {
   font-size: medium;
   text-align: left;
-  background-color: white;
+  background-color: none;
 
 }
 
@@ -293,7 +294,7 @@ td {
 .review-content {
   font-size: medium;
   text-align: left;
-  background-color: white;
+  background-color: none;
 
 }
 
