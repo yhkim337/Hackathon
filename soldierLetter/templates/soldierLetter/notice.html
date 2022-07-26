@@ -17,7 +17,7 @@
       {% for notice in notices %}
       <tr>
           <td>{{notice.id}}</td>
-          <td onclick="showNoticeContent({{notice.id}})">{{notice.title}}</td>
+          <td id="notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.title}}</td>
           <td id="notice-created">{{notice.created_at}}</td>
       </tr>
       <tr>
