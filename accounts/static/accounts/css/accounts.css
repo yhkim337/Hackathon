@@ -44,7 +44,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 0px 300px;
-  background-color: white;
+  background-color: gray;
   height: 300px;
   width: 100%;
 }
@@ -58,6 +58,7 @@ a {
 }
 
 a:link {
+  text-decoration: none;
   color: black;
 }
 
