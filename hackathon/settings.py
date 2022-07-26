@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sass_processor',
     'soldierLetter',
+    'superviser',
     'bootstrap4',
     'accounts.apps.AccountsConfig',
 ]
