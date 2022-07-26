@@ -1,1 +1,17 @@
-<h1>후기</h1>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div id="review-title">후기</div>
+<br><br>
+<div id="review-container">
+    {% for review in reviews %}
+    <div id="bubble" class="bubble">
+        {{review.title}}
+        <br><br>
+        {{review.content}}
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>   
+{% endblock content %}
