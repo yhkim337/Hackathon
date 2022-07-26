@@ -92,9 +92,20 @@
                             </div>
                         </div>
                         <div class="example" id="example">
-                            {% for sport_news in sport_news.all%}
-                                <p>--{{sport_news.title}}--</p>
-                                <p>{{sport_news.summary}}</p>
+                            [응원메세지]
+                            <br><br>
+                            {% for encourage in encourage.all%}
+                                <p>--{{encourage.content}}--</p>
+                            {% endfor %}
+                            [게임]
+                            <br><br>
+                            {% for game in game.all%}
+                                <p>--{{game.content}}--</p>
+                            {% endfor %}
+                            [팁]
+                            <br><br>
+                            {% for tip in tip.all%}
+                                <p>--{{tip.content}}--</p>
                             {% endfor %}
                         </div>
                     </section>
@@ -111,16 +122,16 @@
 
         <div id="information">
             <section class="sec" id="notice">
-            <div class="title">
+                <div class="title">
                 공지사항
-            </div>
-            <div class="summary">
+                </div>
+                <div class="summary" id="index-notice">
                 {% for notice in notices %}
                 <div id="notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
                 <div id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</div>
                 <br>
                 {% endfor %}                
-            </div>
+                </div>
             <a href="{% url 'notice'%}" class="more">더보기</a>
             </section>
 
@@ -149,14 +160,6 @@
                 Q. 후원계좌 알려주세요<br>
                 A.<br>
                 <br>
-                Q. 안녕하세요<br>
-                A. 네, 안녕하세요<br>
-                <br>
-                Q. 본사가 어디인가요<br>
-                A. ...<br>
-                <br>
-                Q. 我爱你<br>
-                A. 我也爱你<br>
             </div>
             </section>
         </div>
@@ -165,6 +168,5 @@
             <img id='to-top' src="{% static 'soldierLetter\image\arrow-up-solid.svg' %}">
             <script src="{% static 'soldierLetter/js/index.js' %}"></script>
         </div>
-
         </div>
 {% endblock content %}
