@@ -168,7 +168,8 @@ button {
 }
 
 #carouselIndicators {
-  background: rgb(113, 189, 113)
+  background: rgb(113, 189, 113);
+  z-index: -1;
 }
 
 .carousel-item {
@@ -188,7 +189,6 @@ button {
 }
 
 .gradient {
-  z-index: -1;
   position: fixed;
   top: 80%;
   height: 20%;
