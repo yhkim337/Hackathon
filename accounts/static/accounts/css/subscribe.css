@@ -40,7 +40,12 @@ option {
     border-radius: 10px;
 }
 
+option:hover {
+    background-color: black;
+}
+
 #selection {
+    
     text-align: center;
 }
 
