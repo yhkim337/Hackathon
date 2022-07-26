@@ -26,6 +26,7 @@ header {
   padding: 10px 30px;
   background-color: rgb(200, 248, 170);
   height: 50px;
+  width: 100%;
 }
 
 .icon-container {
@@ -49,14 +50,22 @@ header {
 
 
 a {
-  text-decoration-line: none;
+  text-decoration: none;
+  color: black;
 }
 
 a:link {
+  text-decoration-line: none;
   color: black;
 }
 
 a:visited {
+  text-decoration-line: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
   color: black;
 }
 
@@ -124,6 +133,7 @@ footer {
   padding: 0px 300px;
   background-color: gray;
   height: 200px;
+  width: 100%;
 }
 
 #footer-image {

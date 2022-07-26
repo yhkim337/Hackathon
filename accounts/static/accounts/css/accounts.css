@@ -20,6 +20,7 @@ header {
   padding: 10px 30px;
   background-color: rgb(200, 248, 170);
   height: 50px;
+  width: 100%;
 }
 
 body {
@@ -45,6 +46,7 @@ footer {
   padding: 0px 300px;
   background-color: white;
   height: 300px;
+  width: 100%;
 }
 
 #footer-image {
