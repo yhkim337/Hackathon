@@ -1,92 +1,96 @@
 {% extends 'accounts_base.html' %}
 {% block content %}
 {% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'accounts/css/subscribe.css' %}">
     <h1> 구독하기 </h1>
-    <form method="POST" action="{% url 'edit' %}">
-        {% csrf_token %}
-        이름:
-        <br>
-        <input name="name" type="text" value={{name}}>
-        <br>
-        <br>
-        생년월일:
-        <br>
-        <input name="birthday" type="date" value={{birthday}}>
-        <br>
-        <br>
-        군종류:
-        <br>
-        <select name="army_type">
-            <option value="육군">육군</option>
-            <option value="공군">공군</option>
-            <option value="해군">해군</option>
-            <option value="해병대">해병대</option>
-        </select>
-        <br>
-        <br>
-        부대정보:
-        <br>
-        <select name="unit_type">
-            <option value="논산훈련소">논산훈련소</option>
-            <option value="1사단">1사단</option>
-            <option value="3사단">3사단</option>
-            <option value="5사단">5사단</option>
-            <option value="6사단">6사단</option>
-            <option value="7사단">7사단</option>
-            <option value="9사단">9사단</option>
-            <option value="12사단">12사단</option>
-            <option value="15사단">15사단</option>
-            <option value="21사단">21사단</option>
-            <option value="25사단">25사단</option>
-            <option value="27사단">27사단</option>
-            <option value="28사단">28사단</option>
-            <option value="31사단">31사단</option>
-            <option value="32사단">32사단</option>
-            <option value="35사단">35사단</option>
-            <option value="36사단">36사단</option>
-            <option value="37사단">37사단</option>
-            <option value="39사단">39사단</option>
-            <option value="50사단">50사단</option>
-            <option value="51사단">51사단</option>
-            <option value="55사단">55사단</option>
-            <option value="공군기초훈련단">공군기초훈련단</option>
-            <option value="해군기초군사교육단">해군기초군사교육단</option>
-            <option value="해병대교육훈련단">해병대교육훈련단</option>
-        </select>
-        <br>
-        <br>
-        입영날짜:
-        <br>
-        <input name="enter_date" type="date" value={{enter_date}}>
-        <br>
-        <br>
-        구독뉴스 1:
-        <br>
-        <select name="sub_type1" onchange="showfield1(this.options[this.selectedIndex].value)">
-            <option value="국내야구">국내야구</option>
-            <option value="해외야구">해외야구</option>
-            <option value="국내축구">국내축구</option>
-            <option value="해외축구">해외축구</option>
-            <option value="농구">농구</option>
-            <option value="이스포츠">이스포츠</option>
-            <option value="주식">주식</option>
-        </select>
-        <div id="div1"></div>
-        <br>
-        구독뉴스 2:
-        <br>
-        <select name="sub_type2" onchange="showfield2(this.options[this.selectedIndex].value)">
-            <option value="국내야구">국내야구</option>
-            <option value="해외야구">해외야구</option>
-            <option value="국내축구">국내축구</option>
-            <option value="해외축구">해외축구</option>
-            <option value="농구">농구</option>
-            <option value="이스포츠">이스포츠</option>
-            <option value="주식">주식</option>
-        </select>
-        <div id="div2"></div>
-        <br>
-        <input type="submit" value="구독하기">
-    </form>
+    <div id='subscribe-container'>
+        <form method="POST" action="{% url 'edit' %}">
+            {% csrf_token %}
+            이름
+            <br>
+            <input name="name" type="text" value={{name}}>
+            <br>
+            <br>
+            생년월일
+            <br>
+            <input name="birthday" type="date" value={{birthday}}>
+            <br>
+            <br>
+            군종류
+            <br>
+            <select name="army_type">
+                <option value="육군">육군</option>
+                <option value="공군">공군</option>
+                <option value="해군">해군</option>
+                <option value="해병대">해병대</option>
+            </select>
+            <br>
+            <br>
+            부대정보
+            <br>
+            <select name="unit_type">
+                <option value="논산훈련소">논산훈련소</option>
+                <option value="1사단">1사단</option>
+                <option value="3사단">3사단</option>
+                <option value="5사단">5사단</option>
+                <option value="6사단">6사단</option>
+                <option value="7사단">7사단</option>
+                <option value="9사단">9사단</option>
+                <option value="12사단">12사단</option>
+                <option value="15사단">15사단</option>
+                <option value="21사단">21사단</option>
+                <option value="25사단">25사단</option>
+                <option value="27사단">27사단</option>
+                <option value="28사단">28사단</option>
+                <option value="31사단">31사단</option>
+                <option value="32사단">32사단</option>
+                <option value="35사단">35사단</option>
+                <option value="36사단">36사단</option>
+                <option value="37사단">37사단</option>
+                <option value="39사단">39사단</option>
+                <option value="50사단">50사단</option>
+                <option value="51사단">51사단</option>
+                <option value="55사단">55사단</option>
+                <option value="공군기초훈련단">공군기초훈련단</option>
+                <option value="해군기초군사교육단">해군기초군사교육단</option>
+                <option value="해병대교육훈련단">해병대교육훈련단</option>
+            </select>
+            <br>
+            <br>
+            입영날짜
+            <br>
+            <input name="enter_date" type="date" value={{enter_date}}>
+            <br>
+            <br>
+            구독뉴스 1
+            <br>
+            <select name="sub_type1" onchange="showfield1(this.options[this.selectedIndex].value)">
+                <option value="국내야구">국내야구</option>
+                <option value="해외야구">해외야구</option>
+                <option value="국내축구">국내축구</option>
+                <option value="해외축구">해외축구</option>
+                <option value="농구">농구</option>
+                <option value="이스포츠">이스포츠</option>
+                <option value="주식">주식</option>
+            </select>
+            <div id="div1"></div>
+            <br>
+            구독뉴스 2
+            <br>
+            <select name="sub_type2" onchange="showfield2(this.options[this.selectedIndex].value)">
+                <option value="국내야구">국내야구</option>
+                <option value="해외야구">해외야구</option>
+                <option value="국내축구">국내축구</option>
+                <option value="해외축구">해외축구</option>
+                <option value="농구">농구</option>
+                <option value="이스포츠">이스포츠</option>
+                <option value="주식">주식</option>
+            </select>
+            <div id="div2"></div>
+            <br>
+            <input id='subscribe-button' type="submit" value="구독하기">
+        </form>
+    </div>
 <script src="{% static 'accounts/js/edit.js' %}"></script>
 {% endblock content %}

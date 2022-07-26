@@ -55,10 +55,17 @@ a:link {
 }
 
 a:link {
+  text-decoration-line: none;
   color: black;
 }
 
 a:visited {
+  text-decoration-line: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
   color: black;
 }
 
@@ -132,6 +139,7 @@ footer {
   padding: 0px 300px;
   background-color: gray;
   height: 200px;
+  width: 100%;
 }
 
 #footer-image {
