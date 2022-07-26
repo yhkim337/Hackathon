@@ -113,7 +113,7 @@
             </div>
             <div class="summary">
                 {% for notice in notices %}
-                <div onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
+                <div id="notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
                 <div id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</div>
                 <br>
                 {% endfor %}                
@@ -127,7 +127,7 @@
             </div>
             <div class="summary">
                 {% for review in reviews %}
-                <div onclick="showReviewContent({{review.id}})">{{review.id}}. {{review.title}}</div>
+                <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.title}}</div>
                 <div id="review-content-{{review.id}}" class="review-content" style="display:none">{{review.content}}</div>
                 <br>
                 {% endfor %}

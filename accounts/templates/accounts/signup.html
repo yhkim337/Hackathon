@@ -6,7 +6,7 @@
       {% csrf_token %}
       아이디:
       <br>
-      <input name="username" type="text" value="">
+      <input onblur="idDuplicateCheck()" name="username" type="text" value="">
       <br>
       <div id="isDuplicate"></div>
       <br>
@@ -23,7 +23,6 @@
       <button type="submit" >회원가입</button>
   </form>
   {% csrf_token %}
-  <button onclick="idDuplicateCheck()">아이디 중복체크</button>
   
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
