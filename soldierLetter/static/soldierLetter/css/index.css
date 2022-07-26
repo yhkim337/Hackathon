@@ -134,11 +134,16 @@ button {
   position: fixed;
   top: 88%; left: 50%;
   transform: translate(-50%, 0);
-  background-color: lightgray;
+  background-color: rgb(200, 200, 200);
   border: 2px solid black;
   font-family: 'ROKAMedium';
   font-weight: bold;
   font-size: 30px;
+  border: 0px solid white;
+  border-radius: 10px;
+  height: 60px;
+  width: 250px;
+  z-index: 100;
 }
 
 #introduce-section {
@@ -164,6 +169,7 @@ button {
 
 #carouselIndicators {
   background: rgb(154, 207, 154)
+
 }
 
 .carousel-item {
@@ -187,7 +193,6 @@ button {
 }
 
 .gradient {
-
   position: fixed;
   top: 80%;
   height: 20%;
