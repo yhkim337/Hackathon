@@ -99,7 +99,7 @@ a:hover {
 
 .summary {
   padding: 20px 0px;
-  width: 750px;
+  width: 500px;
   line-height: 200%;
 }
 
@@ -117,6 +117,7 @@ a:hover {
   max-width: 500px;
   min-height: 400px;
   max-height: 400px;
+  border-radius: 10px;
 }
 
 #notice {
@@ -337,6 +338,9 @@ td {
   padding-left: 2%;
 }
 
+#index-notice {
+  width: 1000px;
+}
 
 #notice-created {
   font-size: medium;
