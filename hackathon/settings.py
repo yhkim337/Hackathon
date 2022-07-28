@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -86,7 +85,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -138,3 +136,10 @@ SASS_PROCESSOR_ROOT =  os.path.join(BASE_DIR, 'soldierLetter', 'static')
 
 LOGIN_REDIRECT_URL = "/intro/"
 LOGOUT_REDIRECT_URL = "/intro/"
+
+# EMAIL_HOST = 'smtp.gmail.com' 		 # 메일 호스트 서버
+# EMAIL_PORT = '587' 			 # 서버 포트
+# EMAIL_HOST_USER = 'soldiernewsletter@gmail.com' 	 # 우리가 사용할 Gmail
+# EMAIL_HOST_PASSWORD = 'mutsanewsletter'		 # 우리가 사용할 Gmail password
+# EMAIL_USE_TLS = True			 # TLS 보안 설정
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER	 # 응답 메일 관련 설정

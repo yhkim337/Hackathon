@@ -143,10 +143,10 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 150px 300px;
-  padding-top: 80px;
+  padding-top: 50px;
   /* background-color: rgb(233, 233, 233); */
   background-color: rgba(154, 207, 154, 0.5);
-  height: 200px;
+  height: 250px;
   width: 100%;
 }
 
@@ -556,3 +556,12 @@ td.review-table {
   font-size: 45px;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
