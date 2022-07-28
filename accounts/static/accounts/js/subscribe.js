@@ -1,6 +1,6 @@
 const showfield1 = (name) => {
     if(name=='주식'){
-        document.getElementById('div1').innerHTML='주식종목: <input type="text" name="stock_type" />';
+        document.getElementById('div1').innerHTML='주식종목: <input type="text" name="stock_type" placeholder="정확한 주식 종목을 입력하세요" style="font-size: 15px"/>';
     } else{
         document.getElementById('div1').innerHTML='';
     }
@@ -17,7 +17,7 @@ const showfield1 = (name) => {
 
 const showfield2 = (name) => {
     if(name=='주식'){
-        document.getElementById('div2').innerHTML='주식종목: <input type="text" name="stock_type" />';
+        document.getElementById('div2').innerHTML='주식종목: <input type="text" name="stock_type" placeholder="정확한 주식 종목을 입력하세요" style="font-size: 15px"/>';
     } else{
         document.getElementById('div2').innerHTML='';
     } 

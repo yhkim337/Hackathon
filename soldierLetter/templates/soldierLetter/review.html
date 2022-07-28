@@ -8,19 +8,26 @@
 <br><br>
 <div id="review-container">
     {% for review in reviews %}
-    <div id="bubble" class="bubble">
-        {{review.author}}
+    {% comment %} <div id="bubble" class="bubble"> {% endcomment %}
+        <table class='review-table'>
+            <thead class='review-table'>
+                <tr class='review-table'>
+                    <th class='review-table'>{{review.title}}</th>
+                </tr>
+            </thead>
+            <tbody class='review-table'>
+                <tr class='review-table'>
+                    <td class='review-table'>{{review.content}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% comment %} {{review.title}}
         <br><br>
-        {{review.content}}
-        <br>
-        {% if review.author == request.user %}
-            <a href="{% url 'edit_review' rid=review.id %}">수정</a>
-            <a href="{% url 'delete_review' rid=review.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
-        {% endif %}
-    </div>
+        {{review.content}} {% endcomment %}
+    {% comment %} </div> {% endcomment %}
     {% endfor %}
 </div>
 <a href="{% url 'new_review' %}">후기 남기기</a>
 <br>
-<br>   
+<br>
 {% endblock content %}
