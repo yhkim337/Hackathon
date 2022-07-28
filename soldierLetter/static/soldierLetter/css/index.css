@@ -342,7 +342,7 @@ td {
 }
 
 #index-notice {
-  width: 1000px;
+  width: 100%;
 }
 
 #notice-created {
@@ -549,3 +549,10 @@ td.review-table {
   border-bottom: 5px double rgb(61, 61, 61);
   margin-bottom: 2%;
 }
+
+#board-title {
+  padding-top: 10vh;
+  text-align: center;
+  font-size: 45px;
+}
+
