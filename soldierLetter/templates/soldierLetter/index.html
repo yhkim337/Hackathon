@@ -53,6 +53,7 @@
                                 </div>
                             </div>
                             <div class="example" id="example">
+                            <div class='article-title'>SPORTS NEWS</div>
                             {% for sport_news in sport_news.all%}
                                 <p>{{sport_news.index}}.{{sport_news.title}}</p>
                                 <p>{{sport_news.summary}}</p>
@@ -71,6 +72,7 @@
                             </div>
                         </div>
                         <div class="example" id="example">
+                            <div class='article-title'>FINANCE NEWS</div>
                             {% for finance_data in finance_data.all%}
                                 <p>{{finance_data.index}}.{{finance_data.name}} : {{finance_data.price}}</p>
                             {% endfor%}
@@ -92,6 +94,7 @@
                             </div>
                         </div>
                         <div class="example" id="example">
+                            <div class='article-title'>TIPS & SUPPORT</div>
                             [응원메세지]
                             <br><br>
                             {% for encourage in encourage.all%}
