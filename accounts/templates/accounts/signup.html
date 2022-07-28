@@ -20,7 +20,7 @@
                 {% csrf_token %}
                 아이디
                 <br>
-                <input name="username" type="text" value="" placeholder="아이디" onfocus="this.placeholder = ''" onblur="this.placeholder = '아이디'">
+                <input name="username" type="text" value="" placeholder="아이디" onfocus="this.placeholder = ''" onblur="idDuplicateCheck()">
                 <br>
                 <div id="isDuplicate"></div>
                 <br>
@@ -39,9 +39,6 @@
                 </div>
             </form>
             {% csrf_token %}
-          </div>
-          <div id='id-check'>
-            <button onclick="idDuplicateCheck()">아이디 중복체크</button>
           </div>
         </div>
 

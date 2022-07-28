@@ -30,8 +30,12 @@
         <nav class="menu-navigator">
             {% if user.is_authenticated %}
                 <a href="{% url 'logout'%}" class="menu">로그아웃</a>
-                {% if user.profile.subscribe == True %}
-                    <a href="{% url 'edit' %}" class="menu">내정보 수정</a>
+                {% if user.is_superuser == True %}
+                    <a href=" {% url 'superviser' %}" class="menu">관리자 페이지</a>
+                {% else %}
+                    {% if user.profile.subscribe == True %}
+                        <a href="{% url 'edit' %}" class="menu">내정보 수정</a>
+                    {% endif %}
                 {% endif %}
             {% else %}
                 <a href="{% url 'login' %}" class="menu">로그인</a>
