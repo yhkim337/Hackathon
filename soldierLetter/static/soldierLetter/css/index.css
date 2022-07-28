@@ -122,22 +122,27 @@ a:hover {
 
 #notice {
   display: block;
+  background-color: rgba(255, 228, 196, 0.200);
 }
 
 #review {
   display: block;
+  background-color: rgba(255, 228, 196, 0.200);
 }
 
 #faq {
   display: block;
+  background-color: rgba(255, 228, 196, 0.200);
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 300px;
-  background-color: gray;
+  padding: 150px 300px;
+  padding-top: 80px;
+  /* background-color: rgb(233, 233, 233); */
+  background-color: rgba(154, 207, 154, 0.5);
   height: 200px;
   width: 100%;
 }
@@ -151,11 +156,10 @@ button {
   top: 88%; left: 50%;
   transform: translate(-50%, 0);
   background-color: rgb(200, 200, 200);
-  border: 2px solid black;
+  border: 5px double rgba(0, 0, 0, 0.500);
   font-family: 'ROKAMedium';
   font-weight: bold;
   font-size: 30px;
-  border: 0px solid white;
   border-radius: 10px;
   height: 60px;
   width: 250px;
@@ -197,8 +201,7 @@ button {
 }
 
 #carouselIndicators {
-  background: rgb(154, 207, 154)
-
+  background: rgb(154, 207, 154);
 }
 
 .carousel-item {
@@ -212,7 +215,7 @@ button {
 }
 
 #to-top {
-  z-index: 100;
+  z-index: 101;
   position: fixed;
   top: 94%; left: 97%;
   height: 30px;
@@ -229,6 +232,7 @@ button {
   height: 20%;
   width: 100%;
   background: linear-gradient(rgba(255, 247, 238, 0), 75%, rgba(0, 0, 0, 0.7));
+  z-index: 100;
 }
 
 table {
@@ -241,7 +245,6 @@ table {
   text-align: center;
   width: 60%;
   border-bottom: solid 2px black;
-
 }
 
 th {
@@ -273,17 +276,51 @@ td {
   font-size: 45px;
 }
 
+#main-notice-head {
+  padding-left: 2%;
+  background-color: #ffdb87;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  font-size: larger;
+}
+
+#main-notice-head:hover {
+  cursor: pointer;
+  color: gray;
+}
+
 #notice-head:hover {
   cursor: pointer;
   color: gray;
+}
+
+.main-notice-content {
+  padding-left: 2%;
+  font-size: medium;
+  text-align: left;
+  background-color: rgb(236, 236, 236);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 100vw;
 }
 
 .notice-content {
   font-size: medium;
   text-align: left;
   background-color: white;
-  border: 1px solid black;
+}
 
+#review-head {
+  display: flex;
+  align-items: center;
+  background-color: #ffdb87;
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-left: 2%;
+  font-size: larger;
 }
 
 #review-head:hover {
@@ -295,8 +332,10 @@ td {
 .review-content {
   font-size: medium;
   text-align: left;
-  background-color: white;
-
+  background-color: rgb(236, 236, 236);
+  width: 100vw;
+  border-radius: 30px;
+  padding-left: 2%;
 }
 
 #index-notice {
@@ -343,6 +382,8 @@ left: 185px;
   flex-wrap: wrap;
   flex-direction: row;
   display: flex;
+  width: 70%;
+  margin: 0 auto;
 }
 
 #review-title {
@@ -449,4 +490,49 @@ left: 185px;
     height: 24px;
     cursor: pointer;
   }
+}
+
+.review-img {
+  height: 50px;
+  background-color: beige;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+
+#review-id {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+
+.full {
+  width: 100%;
+  padding-bottom: 0%;
+}
+
+table.review-table {
+  border-collapse: collapse;
+  border: none;
+  width: 30%;
+  text-align: left;
+  font-family: 'ROKAMeidum';
+  margin: 1%;
+}
+
+th.review-table {
+  border: none;
+  background-color: #ffdb87;
+  padding-left: 4%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 23px;
+}
+
+td.review-table {
+  vertical-align: top;
+  background-color: rgb(236, 236, 236);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 18px;
 }

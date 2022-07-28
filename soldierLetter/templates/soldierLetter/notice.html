@@ -18,7 +18,7 @@
       <tr>
           <td>{{notice.id}}</td>
           <td id="notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.title}}</td>
-          <td id="notice-created">{{notice.created_at}}</td>
+          <td id="notice-created">{{notice.created_at|date:'Y-m-d'}}</td>
       </tr>
       <tr>
         <td id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</td>

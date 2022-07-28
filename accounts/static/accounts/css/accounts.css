@@ -44,7 +44,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 0px 300px;
-  background-color: gray;
+  background-color: rgb(233, 233, 233);
   height: 300px;
   width: 100%;
 }

@@ -21,7 +21,7 @@
                 군종류
                 <br>
                 <select name="army_type">
-                    <option id='selection' value="" selected>=== 선택 ===</option>
+                    <option id='selection' value="" selected hidden>=== 선택 ===</option>
                     <option value="육군">육군</option>
                     <option value="공군">공군</option>
                     <option value="해군">해군</option>
@@ -32,7 +32,7 @@
                 부대정보
                 <br>
                 <select name="unit_type">
-                    <option value="none" id='selection' selected>=== 선택 ===</option>
+                    <option value="none" id='selection' selected hidden>=== 선택 ===</option>
                     <option value="논산훈련소">논산훈련소</option>
                     <option value="1사단">1사단</option>
                     <option value="3사단">3사단</option>
@@ -69,7 +69,7 @@
                 구독뉴스 1
                 <br>
                 <select name="sub_type1" onchange="showfield1(this.options[this.selectedIndex].value)">
-                    <option value="" id='selection' selected>=== 선택 ===</option>
+                    <option value="" id='selection' selected hidden>=== 선택 ===</option>
                     <option value="국내야구">국내야구</option>
                     <option value="해외야구">해외야구</option>
                     <option value="국내축구">국내축구</option>
@@ -83,7 +83,7 @@
                 구독뉴스 2
                 <br>
                 <select id="sub_type2" name="sub_type2" onchange="showfield2(this.options[this.selectedIndex].value)">
-                    <option id='selection' selected="selected">=== 선택 ===</option>
+                    <option id='selection' selected="selected" hidden='True'>=== 선택 ===</option>
                     <option value="국내야구">국내야구</option>
                     <option value="해외야구">해외야구</option>
                     <option value="국내축구">국내축구</option>

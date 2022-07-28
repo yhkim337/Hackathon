@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-        <section class="main-container">
+        <section class="main-container" id="service">
             <section class="introduction sec" id="introduce-section">
                 <div>
                     <img class="service-image" src="{% static 'soldierLetter\image\main-image6.jpg' %}">
@@ -124,11 +124,11 @@
             <section class="sec" id="notice">
                 <div class="title">
                 공지사항
-                </div>
-                <div class="summary" id="index-notice">
+            </div>
+            <div class="summary full" id="index-notice">
                 {% for notice in notices %}
-                <div id="notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
-                <div id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</div>
+                <div id="main-notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
+                <div id="notice-content-{{notice.id}}" class="main-notice-content" style="display:none">{{notice.content}}</div>
                 <br>
                 {% endfor %}                
                 </div>
@@ -139,9 +139,12 @@
             <div class="title">
                 후기
             </div>
-            <div class="summary">
+            <div class="summary full">
                 {% for review in reviews %}
-                <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.title}}</div>
+                <div id='review-id'>
+                    <img class='review-img' src="{% static 'soldierLetter\image\soldier (1).png' %}">
+                    <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.title}}</div>
+                </div>
                 <div id="review-content-{{review.id}}" class="review-content" style="display:none">{{review.content}}</div>
                 <br>
                 {% endfor %}
