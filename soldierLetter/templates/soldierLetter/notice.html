@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<div id="notice">
 <div id="notice-title">
   공지사항
 </div>
@@ -26,5 +27,6 @@
       {% endfor %}
   </tbody>
 </table>
+</div>
 <script src="{% static 'soldierLetter/js/notice.js' %}"></script>
 {% endblock content %}
