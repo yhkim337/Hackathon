@@ -99,7 +99,7 @@ a:hover {
 
 .summary {
   padding: 20px 0px;
-  width: 750px;
+  width: 500px;
   line-height: 200%;
 }
 
@@ -341,6 +341,9 @@ td {
   padding-left: 2%;
 }
 
+#index-notice {
+  width: 1000px;
+}
 
 #notice-created {
   font-size: medium;
