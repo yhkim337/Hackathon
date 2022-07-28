@@ -5,11 +5,24 @@
 <br><br>
 <div id="review-container">
     {% for review in reviews %}
-    <div id="bubble" class="bubble">
-        {{review.title}}
+    {% comment %} <div id="bubble" class="bubble"> {% endcomment %}
+        {% comment %} <img src="{% static 'soldierLetter\image\soldier (1).png' %}"> {% endcomment %}
+        <table class='review-table'>
+            <thead class='review-table'>
+                <tr class='review-table'>
+                    <th class='review-table'>{{review.title}}</th>
+                </tr>
+            </thead>
+            <tbody class='review-table'>
+                <tr class='review-table'>
+                    <td class='review-table'>{{review.content}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% comment %} {{review.title}}
         <br><br>
-        {{review.content}}
-    </div>
+        {{review.content}} {% endcomment %}
+    {% comment %} </div> {% endcomment %}
     {% endfor %}
 </div>
 <br>

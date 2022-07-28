@@ -114,10 +114,10 @@
             <div class="title">
                 공지사항
             </div>
-            <div class="summary">
+            <div class="summary full">
                 {% for notice in notices %}
-                <div id="notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
-                <div id="notice-content-{{notice.id}}" class="notice-content" style="display:none">{{notice.content}}</div>
+                <div id="main-notice-head" onclick="showNoticeContent({{notice.id}})">{{notice.id}}. {{notice.title}}</div>
+                <div id="notice-content-{{notice.id}}" class="main-notice-content" style="display:none">{{notice.content}}</div>
                 <br>
                 {% endfor %}                
             </div>
@@ -128,9 +128,12 @@
             <div class="title">
                 후기
             </div>
-            <div class="summary">
+            <div class="summary full">
                 {% for review in reviews %}
-                <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.title}}</div>
+                <div id='review-id'>
+                    <img class='review-img' src="{% static 'soldierLetter\image\soldier (1).png' %}">
+                    <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.title}}</div>
+                </div>
                 <div id="review-content-{{review.id}}" class="review-content" style="display:none">{{review.content}}</div>
                 <br>
                 {% endfor %}
