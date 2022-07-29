@@ -74,7 +74,7 @@
                         <div class="example" id="example">
                             <div class='article-title'>FINANCE NEWS</div>
                             {% for finance_data in finance_data.all%}
-                                <p>{{finance_data.index}}.{{finance_data.name}} : {{finance_data.price}}</p>
+                                <p>{{finance_data.name}} : {{finance_data.price}}</p>
                             {% endfor%}
                             {% for finance_news in finance_news.all%}
                                 <p>{{finance_news.title}}</p>
