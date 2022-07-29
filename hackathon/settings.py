@@ -20,7 +20,7 @@ environ.Env.read_env(
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '.herokuapp.com', 'soldierletter.herokuapp.com']
 
@@ -118,12 +118,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'soldierLetter', 'static'),
 #     os.path.join(BASE_DIR, 'accounts', 'static'),
 # )
-
+SASS_PROCESSOR_ENABLED =  True
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -134,7 +134,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
 ]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.ManifestStaticFilesStorage"
 
 LOGIN_REDIRECT_URL = "/intro/"
 LOGOUT_REDIRECT_URL = "/intro/"
