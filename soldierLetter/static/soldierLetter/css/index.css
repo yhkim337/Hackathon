@@ -339,6 +339,7 @@ td {
   width: 100vw;
   border-radius: 30px;
   padding-left: 2%;
+  padding-right: 2%;
 }
 
 #index-notice {
@@ -583,7 +584,7 @@ left: 185px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   font-size: 18px;
-  height: 200px;
+  height: 300px;
 }
 
 #edit-icon {
