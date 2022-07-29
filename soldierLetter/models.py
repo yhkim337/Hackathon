@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class SoccerNewsData(models.Model):
     index = models.CharField(max_length=4, null=True, default='')
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     summary = models.CharField(max_length=300)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
@@ -14,7 +14,7 @@ class SoccerNewsData(models.Model):
 
 class WorldSoccerNewsData(models.Model):
     index = models.CharField(max_length=4, null=True, default='')
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     summary = models.CharField(max_length=300)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
@@ -22,7 +22,7 @@ class WorldSoccerNewsData(models.Model):
 
 class BaseballNewsData(models.Model):
     index = models.CharField(max_length=4, null=True, default='')
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     summary = models.CharField(max_length=300)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
@@ -30,7 +30,7 @@ class BaseballNewsData(models.Model):
 
 class WorldBaseballNewsData(models.Model):
     index = models.CharField(max_length=4, null=True, default='')
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     summary = models.CharField(max_length=300)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
@@ -38,7 +38,7 @@ class WorldBaseballNewsData(models.Model):
 
 class BasketballNewsData(models.Model):
     index = models.CharField(max_length=4, null=True, default='')
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     summary = models.CharField(max_length=300)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
@@ -46,14 +46,14 @@ class BasketballNewsData(models.Model):
 
 class EsportsNewsData(models.Model):
     index = models.CharField(max_length=4, null=True, default='')
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     summary = models.CharField(max_length=300)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.created_at.strftime("%Y-%m-%d")
 
 class FinanceNewsData(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.created_at.strftime("%Y-%m-%d")

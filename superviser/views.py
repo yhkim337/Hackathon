@@ -8,7 +8,6 @@ from selenium.webdriver.common.by import By
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 
-
 # Create your views here.
 def soccer_news_crawling():
     result = {}
