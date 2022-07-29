@@ -68,8 +68,12 @@
             <ul class="navbar__menu">
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout'%}" class="menu">로그아웃</a></li>
-                    {% if user.profile.subscribe == True %}
+                    {% if user.is_superuser == True %}
+                    <li><a href=" {% url 'superviser' %}" class="menu">관리자 페이지</a></li>
+                    {% else %}
+                        {% if user.profile.subscribe == True %}
                         <li><a href="{% url 'edit' %}" class="menu">내정보 수정</a></li>
+                        {% endif %}
                     {% endif %}
                 {% else %}
                     <li><a href="{% url 'login' %}" class="menu">로그인</a></li>

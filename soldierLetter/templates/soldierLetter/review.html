@@ -2,7 +2,6 @@
 {% block content %}
 {% load static %}
 
-{{ value|linebreaksbr}}
 
 <div id="review-title">후기</div>
 <br><br>
@@ -12,7 +11,7 @@
         <table class='review-table'>
             <thead class='review-table'>
                 <tr class='review-table'>
-                    <th class='review-table'>{{review.title}}</th>
+                    <th class='review-table'>{{review.author}}<a href="{% url 'edit_review' rid=review.id%}">수정</a><a href="{% url 'delete_review' rid=review.id%}">삭제</a></th>
                 </tr>
             </thead>
             <tbody class='review-table'>

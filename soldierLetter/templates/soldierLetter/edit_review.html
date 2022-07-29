@@ -9,7 +9,7 @@
 <div>
     <form id="signup-form" method="POST" action="{% url 'edit_review' rid=review.id%}">
         {% csrf_token %}
-        <textarea name='content' value={{review.content}}></textarea>
+        <textarea name='content'>{{review.content}}</textarea>
         <input type='submit' value='수정하기'></input>
     </form>
     {% csrf_token %}

@@ -28,10 +28,8 @@ const handleSignup = (e) => {
 	passwords = getPasswords();
 
 	if (validateUsername(username) && validatePassword(passwords)) {
-		console.log('Valid signup form!');
 		submitTarget(e);
 	} else {
-		console.log('Invalid signup form!');
         showErrorModal();
 	}
 };

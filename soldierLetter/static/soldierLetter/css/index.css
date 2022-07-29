@@ -530,6 +530,8 @@ th.review-table {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   font-size: 23px;
+  word-wrap: break-word;
+
 }
 
 td.review-table {
@@ -538,6 +540,7 @@ td.review-table {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   font-size: 18px;
+  word-wrap: break-word;
 }
 
 .article-title {
