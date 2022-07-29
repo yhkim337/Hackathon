@@ -19,7 +19,7 @@
     </head>
 
     <body>
-      <header>
+      {% comment %} <header>
         <div class="icon-container">
           <a href='{% url 'index' %}'>
             <img class="icon" src="{% static 'soldierLetter\image\envelope-open-text-solid.svg' %}">
@@ -28,6 +28,16 @@
             </div>
           </a>
         </div>
+      </header> {% endcomment %}
+
+      <header>
+        <nav class="navbar" id="navbar">
+          <div class="navbar__logo">
+              <a id='logo' href='{% url 'index' %}'>
+              <img class="icon" src="{% static 'soldierLetter\image\envelope-open-text-solid.svg' %}">
+              <div id='logo-name'>인편 대신 전해드립니다</div></a>
+          </div>
+        </nav>
       </header>
       {% block content %}
       {% endblock %}

@@ -51,3 +51,8 @@ option {
     height: 5vh;
     width: 13vw;
 }
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
