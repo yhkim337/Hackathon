@@ -262,12 +262,12 @@ def index(request):
     if request.method == "POST":
         financenews_data_dict = financenews_crawling()
         financedata_crawling()
-        soccer_news_crawling()
+        # soccer_news_crawling()
         worldsoccer_news_crawling()
-        baseball_news_crawling()
-        worldbaseball_news_crawling()
-        basketball_news_crawling()
-        esports_news_crawling()
+        # baseball_news_crawling()
+        # worldbaseball_news_crawling()
+        # basketball_news_crawling()
+        # esports_news_crawling()
         for m in financenews_data_dict:
             FinanceNewsData(title=m).save()
         return redirect('superviser')
@@ -389,7 +389,7 @@ def send_letter(request):
             driver.find_element(By.CSS_SELECTOR, "#emailPic-container > div.UIbtn > span > input[type=button]").click()
             driver.find_element(By.CSS_SELECTOR, "#emailPic-container > form > div.UIview > table > tbody > tr:nth-child(3) > td > div:nth-child(1) > span > input").click()
 
-            driver.implicitly_wait(20)
+            driver.implicitly_wait(5)
 
             driver.switch_to.window(driver.window_handles[1])
 
