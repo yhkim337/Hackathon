@@ -6,18 +6,16 @@
 <div id="review-container">
     {% for review in reviews %}
     {% comment %} <div id="bubble" class="bubble"> {% endcomment %}
-        <table class='review-table'>
-            <thead class='review-table'>
-                <tr class='review-table'>
-                    <th class='review-table'>{{review.title}}</th>
-                </tr>
-            </thead>
-            <tbody class='review-table'>
-                <tr class='review-table'>
-                    <td class='review-table'>{{review.content}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class='review-post'>
+            <div id='review-title-2'>
+                <div>
+                    {{review.title}}
+                </div>
+            </div>
+            <div id='review-content-2'>
+                {{review.content}}
+            </div>
+        </div>
         {% comment %} {{review.title}}
         <br><br>
         {{review.content}} {% endcomment %}

@@ -514,32 +514,6 @@ left: 185px;
   padding-bottom: 0%;
 }
 
-table.review-table {
-  border-collapse: collapse;
-  border: none;
-  width: 30%;
-  text-align: left;
-  font-family: 'ROKAMeidum';
-  margin: 1%;
-}
-
-th.review-table {
-  border: none;
-  background-color: #ffdb87;
-  padding-left: 4%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  font-size: 23px;
-}
-
-td.review-table {
-  vertical-align: top;
-  background-color: rgb(236, 236, 236);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-size: 18px;
-}
-
 .article-title {
   display: flex;
   justify-content: center;
@@ -559,4 +533,33 @@ td.review-table {
 .footer-logo {
   display: flex;
   justify-content: center;
+}
+
+.review-post {
+  overflow-wrap: break-word;
+  border: none;
+  height: auto;
+  width: 30%;
+  text-align: left;
+  margin: 1%;
+  margin-bottom: 30px;
+}
+
+#review-title-2 {
+  background-color: #ffdb87;
+  padding-left: 5%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 23px;
+  /* height: 40%; */
+}
+
+#review-content-2 {
+  vertical-align: top;
+  background-color: rgb(236, 236, 236);
+  padding-left: 5%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 18px;
+  height: 80%;
 }
