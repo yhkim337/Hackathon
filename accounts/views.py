@@ -10,7 +10,6 @@ def signup(request):
             user = User.objects.create_user(
                 username=request.POST['username'], 
                 password=request.POST['password1'])
-            user.is_active = False
             user.save()
             
             auth.login(request, user)

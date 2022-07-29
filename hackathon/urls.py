@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 import soldierLetter.views
 import accounts.views
+import superviser.views
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -30,6 +31,8 @@ urlpatterns = [
     path('accounts/subscribe/', accounts.views.subscribe, name='subscribe'),
     path('accounts/edit/', accounts.views.edit, name='edit'),
     path('accounts/signup/check/', accounts.views.check, name='check'),
+    path('superviser/', superviser.views.index, name="superviser"),
+    path('superviser/sendletter/', superviser.views.send_letter, name="send_letter"),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

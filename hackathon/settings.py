@@ -10,8 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import email
 from pathlib import Path
-import os 
+import os
+from pickle import TRUE
+from typing import Optional 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,6 +139,10 @@ SASS_PROCESSOR_ROOT =  os.path.join(BASE_DIR, 'soldierLetter', 'static')
 
 LOGIN_REDIRECT_URL = "/intro/"
 LOGOUT_REDIRECT_URL = "/intro/"
+
+ACCOUNT_AUTHENTICATION_METHOD = email
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 # EMAIL_HOST = 'smtp.gmail.com' 		 # 메일 호스트 서버
 # EMAIL_PORT = '587' 			 # 서버 포트

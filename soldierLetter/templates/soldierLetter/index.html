@@ -54,9 +54,9 @@
                             </div>
                             <div class="example" id="example">
                             <div class='article-title'>SPORTS NEWS</div>
-                            {% for sport_news in sport_news.all%}
-                                <p>{{sport_news.index}}.{{sport_news.title}}</p>
-                                <p>{{sport_news.summary}}</p>
+                            {% for worldsoccer_news in worldsoccer_news.all%}
+                                <p>{{worldsoccer_news.title}}</p>
+                                <p>{{worldsoccer_news.summary}}</p>
                             {% endfor%}
                             </div>
                         </section>
@@ -146,7 +146,7 @@
                 {% for review in reviews %}
                 <div id='review-id'>
                     <img class='review-img' src="{% static 'soldierLetter\image\soldier (1).png' %}">
-                    <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.title}}</div>
+                    <div id="review-head" onclick="showReviewContent({{review.id}})">{{review.author}}</div>
                 </div>
                 <div id="review-content-{{review.id}}" class="review-content" style="display:none">{{review.content}}</div>
                 <br>

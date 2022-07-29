@@ -545,6 +545,23 @@ left: 185px;
   margin-bottom: 30px;
 }
 
+#review-write-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 10%;
+  padding-bottom: 2%;
+}
+
+#review-write {
+  padding-left: 1%;
+  padding-right: 1%;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+
+}
+
 #review-title-2 {
   display: flex;
   justify-content: space-between;

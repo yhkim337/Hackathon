@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div id="review-title">
+    후기 수정
+</div>
+
+<div>
+    <form id="signup-form" method="POST" action="{% url 'edit_review' rid=review.id%}">
+        {% csrf_token %}
+        <textarea name='content'>{{review.content}}</textarea>
+        <input type='submit' value='수정하기'></input>
+    </form>
+    {% csrf_token %}
+<div>
+
+
+
+{% endblock content %}
