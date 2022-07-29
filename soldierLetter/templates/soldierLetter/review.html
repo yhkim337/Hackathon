@@ -10,7 +10,6 @@
 </div>
 <div id="review-container">
     {% for review in reviews %}
-    {% comment %} <div id="bubble" class="bubble"> {% endcomment %}
         <div class='review-post'>
             <div id='review-title-2'>
                 <div>
@@ -25,14 +24,10 @@
                     </div>
                 </div>
             </div>
-            <div id='review-content-2'>
+            <div class='review-content-2'>
                 {{review.content}}
             </div>
         </div>
-        {% comment %} {{review.title}}
-        <br><br>
-        {{review.content}} {% endcomment %}
-    {% comment %} </div> {% endcomment %}
     {% endfor %}
 </div>
 
