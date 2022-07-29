@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
-
+import os
 
 # Create your views here.
 def soccer_news_crawling():
@@ -271,8 +271,11 @@ def index(request):
         for m in financenews_data_dict:
             FinanceNewsData(title=m).save()
         return redirect('superviser')
+    
+    date = WorldSoccerNewsData.objects.all().order_by('-created_at')[:1]
+    final_date = date[0]
 
-    return render(request, 'superviser/superviser.html')
+    return render(request, 'superviser/superviser.html', {'final_date':final_date})
 
 
 def send_letter(request):
@@ -356,8 +359,13 @@ def send_letter(request):
 
             print(content)
             options = webdriver.ChromeOptions()
+            options.add_argument("--headless")
+            options.add_argument("--disable-gpu")
+            options.add_argument("--no-sandbox")
+
+            options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
             options.add_experimental_option("excludeSwitches", ["enable-logging"])
-            s = Service("./chromedriver")
+            s = Service(executable_path=os.environ.get("CHROMEDRIVER_PATH"))
             driver = webdriver.Chrome(service=s, options=options)
             driver.implicitly_wait(2)
             driver.get('https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub')
@@ -381,7 +389,7 @@ def send_letter(request):
             driver.find_element(By.CSS_SELECTOR, "#emailPic-container > div.UIbtn > span > input[type=button]").click()
             driver.find_element(By.CSS_SELECTOR, "#emailPic-container > form > div.UIview > table > tbody > tr:nth-child(3) > td > div:nth-child(1) > span > input").click()
 
-            driver.implicitly_wait(1)
+            driver.implicitly_wait(20)
 
             driver.switch_to.window(driver.window_handles[1])
 
@@ -400,6 +408,8 @@ def send_letter(request):
             driver.find_element(By.CSS_SELECTOR, "#contents").send_keys(content)
             driver.find_element(By.CSS_SELECTOR, "#password").send_keys(password)
 
-            # driver.close()
-
-    return redirect('superviser')
+            driver.close()
+    date = WorldSoccerNewsData.objects.all().order_by('-created_at')[:1]
+    final_date = date[0]
+    send = True
+    return render(request, 'superviser/superviser.html', {'final_date':final_date, 'send':send})

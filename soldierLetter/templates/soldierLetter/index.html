@@ -74,7 +74,7 @@
                         <div class="example" id="example">
                             <div class='article-title'>FINANCE NEWS</div>
                             {% for finance_data in finance_data.all%}
-                                <p>{{finance_data.index}}.{{finance_data.name}} : {{finance_data.price}}</p>
+                                <p>{{finance_data.name}} : {{finance_data.price}}</p>
                             {% endfor%}
                             {% for finance_news in finance_news.all%}
                                 <p>{{finance_news.title}}</p>
@@ -98,17 +98,17 @@
                             [응원메세지]
                             <br><br>
                             {% for encourage in encourage.all%}
-                                <p>--{{encourage.content}}--</p>
+                                <p>{{encourage.content}}</p>
                             {% endfor %}
                             [게임]
                             <br><br>
                             {% for game in game.all%}
-                                <p>--{{game.content}}--</p>
+                                <p>{{game.content}}</p>
                             {% endfor %}
                             [팁]
                             <br><br>
                             {% for tip in tip.all%}
-                                <p>--{{tip.content}}--</p>
+                                <p>{{tip.content}}</p>
                             {% endfor %}
                         </div>
                     </section>
@@ -160,11 +160,11 @@
                 자주 묻는 질문
             </div>
             <div class="summary">
-                Q. 유료서비스인가요??<br>
-                A. ...<br>
+                Q. 뉴스는 어디에서 가져오나요?<br>
+                A. 다음(Daum)에서 각 분야의 탑 10 뉴스의 제목과 요약본을 제공하고 있습니다!<br>
                 <br>
-                Q. 후원계좌 알려주세요<br>
-                A.<br>
+                Q. 어느 나라 주식정보까지 가능한가요?<br>
+                A. 안타깝게도 현재 코스피에 등록되어있는 종목들로만 가능하며, 현재 미국 주식 또한 가능하도록 수정 중이니 기다려주세요!<br>
                 <br>
             </div>
             </section>

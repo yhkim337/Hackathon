@@ -5,16 +5,20 @@
 <div id="review-title">
     후기 작성
 </div>
-
-<div>
-    <form id="signup-form" method="POST" action="{% url 'new_review' %}">
+<br>
+<br>
+<br>
+<br>
+<div id="review-form-container">
+    <div id="review-form">
+        <form method="POST" action="{% url 'new_review' %}">
+            {% csrf_token %}
+            <textarea id='review-text' name='content'></textarea>
+            <input type='submit' value='후기 남기기'></input>
+        </form>
         {% csrf_token %}
-        <textarea name='content'></textarea>
-        <input type='submit' value='후기 남기기'></input>
-    </form>
-    {% csrf_token %}
-<div>
-
+    </div>
+</div>
 
 
 {% endblock content %}

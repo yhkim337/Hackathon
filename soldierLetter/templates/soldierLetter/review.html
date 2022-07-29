@@ -5,9 +5,11 @@
 
 <div id="review-title">후기</div>
 <br><br>
+{% if user.profile.subscribe == True %}
 <div id='review-write-container'>
     <div id="review-write"><a href="{% url 'new_review' %}">후기 작성</a></div>
 </div>
+{% endif %}
 <div id="review-container">
     {% for review in reviews %}
         <div class='review-post'>
@@ -15,6 +17,7 @@
                 <div>
                     {{review.author}}
                 </div>
+                {% if review.author == request.user %}
                 <div class='review-icons'>
                     <div class='review-feat-icon'>
                         <a href="{% url 'edit_review' rid=review.id%}"><img id='edit-icon' src="{% static 'soldierLetter\image\edit_icon.png' %}"></a>
@@ -23,6 +26,7 @@
                         <a href="{% url 'delete_review' rid=review.id%}"> <img id='remove-icon' src="{% static 'soldierLetter\image\remove_icon.jpg' %}"></a>
                     </div>
                 </div>
+                {% endif %}
             </div>
             <div class='review-content-2'>
                 {{review.content}}
