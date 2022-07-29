@@ -264,18 +264,18 @@ def index(request):
         financedata_crawling()
         soccer_news_crawling()
         worldsoccer_news_crawling()
-        # baseball_news_crawling()
-        # worldbaseball_news_crawling()
-        # basketball_news_crawling()
-        # esports_news_crawling()
+        baseball_news_crawling()
+        worldbaseball_news_crawling()
+        basketball_news_crawling()
+        esports_news_crawling()
         for m in financenews_data_dict:
             FinanceNewsData(title=m).save()
         return redirect('superviser')
     
-    # index = WorldSoccerNewsData.objects.all().count()
-    date = WorldSoccerNewsData.objects.filter(index=5)
+    date = WorldSoccerNewsData.objects.all().order_by('-created_at')[:1]
+    final_date = date[0]
 
-    return render(request, 'superviser/superviser.html', {'final_date':date[0]})
+    return render(request, 'superviser/superviser.html', {'final_date':final_date})
 
 
 def send_letter(request):
