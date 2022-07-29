@@ -98,17 +98,17 @@
                             [응원메세지]
                             <br><br>
                             {% for encourage in encourage.all%}
-                                <p>--{{encourage.content}}--</p>
+                                <p>{{encourage.content}}</p>
                             {% endfor %}
                             [게임]
                             <br><br>
                             {% for game in game.all%}
-                                <p>--{{game.content}}--</p>
+                                <p>{{game.content}}</p>
                             {% endfor %}
                             [팁]
                             <br><br>
                             {% for tip in tip.all%}
-                                <p>--{{tip.content}}--</p>
+                                <p>{{tip.content}}</p>
                             {% endfor %}
                         </div>
                     </section>

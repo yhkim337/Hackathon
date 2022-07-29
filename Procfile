@@ -1,1 +1,1 @@
-web: gunicorn hackathon.wsgi --timeout 100
+web: gunicorn hackathon.wsgi --max-requests 1200
