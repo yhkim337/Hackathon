@@ -247,7 +247,7 @@ def financedata_crawling():
     list = soup.find("tbody")
     items = list.findAll('tr', onmouseover="mouseOver(this)")
     for item in items :
-        if len(result) < 50:
+        if len(result) < 5:
             basic_info = item.get_text()
             sinfo = basic_info.split("\n")
             index = sinfo[1]
