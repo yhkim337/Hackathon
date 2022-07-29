@@ -393,7 +393,7 @@ def send_letter(request):
 
             driver.switch_to.window(driver.window_handles[1])
 
-            driver.find_element(By.CSS_SELECTOR, "#proceed-button").click()
+            # driver.find_element(By.CSS_SELECTOR, "#proceed-button").click()
             driver.find_element(By.CSS_SELECTOR, "#keyword").send_keys(address)
             driver.find_element(By.CSS_SELECTOR, "#searchContentBox > div.search-wrap > fieldset > span > input[type=button]:nth-child(2)").click()
             driver.find_element(By.CSS_SELECTOR, "#roadAddrTd1 > a").click()
