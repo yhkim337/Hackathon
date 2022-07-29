@@ -11,6 +11,14 @@
                 <div>
                     {{review.title}}
                 </div>
+                <div class='review-icons'>
+                    <div class='review-feat-icon'>
+                        <img id='edit-icon' src="{% static 'soldierLetter\image\edit_icon.png' %}">
+                    </div>
+                    <div class='review-feat-icon'>
+                        <img id='remove-icon' src="{% static 'soldierLetter\image\remove_icon.jpg' %}">
+                    </div>
+                </div>
             </div>
             <div id='review-content-2'>
                 {{review.content}}
