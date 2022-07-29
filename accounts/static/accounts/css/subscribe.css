@@ -18,6 +18,7 @@ body {
 }
 
 h1 {
+    margin-top: 5vh;
     margin-bottom: 5vh;
     font-size: 50px;
 }
@@ -39,15 +40,26 @@ option {
     border-radius: 10px;
 }
 
+option:hover {
+    background-color: black;
+}
+
 #selection {
+    
     text-align: center;
 }
 
 #subscribe-button {
+    margin-bottom: 5vh;
     border-radius: 10px;
     border: 0px solid #ffc949;
     background-color: #ffc949;
     color: white;
     height: 5vh;
     width: 13vw;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
 }

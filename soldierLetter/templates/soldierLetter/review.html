@@ -1,17 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+
+
 <div id="review-title">후기</div>
 <br><br>
+<div id='review-write-container'>
+    <div id="review-write"><a href="{% url 'new_review' %}">후기 작성</a></div>
+</div>
 <div id="review-container">
     {% for review in reviews %}
-    <div id="bubble" class="bubble">
-        {{review.title}}
+    {% comment %} <div id="bubble" class="bubble"> {% endcomment %}
+        <div class='review-post'>
+            <div id='review-title-2'>
+                <div>
+                    {{review.author}}
+                </div>
+                <div class='review-icons'>
+                    <div class='review-feat-icon'>
+                        <a href="{% url 'edit_review' rid=review.id%}"><img id='edit-icon' src="{% static 'soldierLetter\image\edit_icon.png' %}"></a>
+                    </div>
+                    <div class='review-feat-icon'>
+                        <a href="{% url 'delete_review' rid=review.id%}"> <img id='remove-icon' src="{% static 'soldierLetter\image\remove_icon.jpg' %}"></a>
+                    </div>
+                </div>
+            </div>
+            <div id='review-content-2'>
+                {{review.content}}
+            </div>
+        </div>
+        {% comment %} {{review.title}}
         <br><br>
-        {{review.content}}
-    </div>
+        {{review.content}} {% endcomment %}
+    {% comment %} </div> {% endcomment %}
     {% endfor %}
 </div>
+
 <br>
-<br>   
+<br>
 {% endblock content %}
