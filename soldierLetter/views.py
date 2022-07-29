@@ -8,9 +8,9 @@ from django.shortcuts import redirect
 # Create your views here.
 def index(request):
     finance_news = FinanceNewsData.objects.all().order_by('-created_at')[:7]
-    finance_data = FinanceData.objects.all().order_by('-created_at')[:5]
+    finance_data = FinanceData.objects.all().order_by('-created_at')[:3]
     soccer_news = SoccerNewsData.objects.all().order_by('-created_at')[:5]
-    worldsoccer_news = WorldSoccerNewsData.objects.all().order_by('-created_at')[:5]
+    worldsoccer_news = WorldSoccerNewsData.objects.all().order_by('-created_at')[:4]
     baseball_news = BaseballNewsData.objects.all().order_by('-created_at')[:5]
     worldbaseball_news = WorldBaseballNewsData.objects.all().order_by('-created_at')[:5]
     basketball_news = BasketballNewsData.objects.all().order_by('-created_at')[:5]
