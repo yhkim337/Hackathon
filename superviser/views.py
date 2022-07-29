@@ -272,11 +272,10 @@ def index(request):
             FinanceNewsData(title=m).save()
         return redirect('superviser')
     
+    # index = WorldSoccerNewsData.objects.all().count()
     date = WorldSoccerNewsData.objects.filter(index=5)
-    index = len(date)
-    print(date[index-1])
 
-    return render(request, 'superviser/superviser.html', {'final_date':date[index-1]})
+    return render(request, 'superviser/superviser.html', {'final_date':date[0]})
 
 
 def send_letter(request):
