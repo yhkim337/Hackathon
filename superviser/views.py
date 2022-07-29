@@ -270,8 +270,11 @@ def index(request):
         for m in financenews_data_dict:
             FinanceNewsData(title=m).save()
         return redirect('superviser')
+    
+    date = WorldSoccerNewsData.objects.all().order_by('-created_at')[:1]
+    final_date = date[0]
 
-    return render(request, 'superviser/superviser.html')
+    return render(request, 'superviser/superviser.html', {'final_date':final_date})
 
 
 def send_letter(request):
@@ -399,6 +402,8 @@ def send_letter(request):
             driver.find_element(By.CSS_SELECTOR, "#contents").send_keys(content)
             driver.find_element(By.CSS_SELECTOR, "#password").send_keys(password)
 
-            # driver.close()
-
-    return redirect('superviser')
+            driver.close()
+    date = WorldSoccerNewsData.objects.all().order_by('-created_at')[:1]
+    final_date = date[0]
+    send = True
+    return render(request, 'superviser/superviser.html', {'final_date':final_date, 'send':send})
