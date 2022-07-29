@@ -5,20 +5,23 @@
 
 <div id="review-title">후기</div>
 <br><br>
+<div id='review-write-container'>
+    <div id="review-write"><a href="{% url 'new_review' %}">후기 작성</a></div>
+</div>
 <div id="review-container">
     {% for review in reviews %}
     {% comment %} <div id="bubble" class="bubble"> {% endcomment %}
         <div class='review-post'>
             <div id='review-title-2'>
                 <div>
-                    {{review.title}}
+                    {{review.author}}
                 </div>
                 <div class='review-icons'>
                     <div class='review-feat-icon'>
-                        <img href="{% url 'edit_review' rid=review.id%}" id='edit-icon' src="{% static 'soldierLetter\image\edit_icon.png' %}">
+                        <a href="{% url 'edit_review' rid=review.id%}"><img id='edit-icon' src="{% static 'soldierLetter\image\edit_icon.png' %}"></a>
                     </div>
                     <div class='review-feat-icon'>
-                        <img href="{% url 'delete_review' rid=review.id%}" id='remove-icon' src="{% static 'soldierLetter\image\remove_icon.jpg' %}">
+                        <a href="{% url 'delete_review' rid=review.id%}"> <img id='remove-icon' src="{% static 'soldierLetter\image\remove_icon.jpg' %}"></a>
                     </div>
                 </div>
             </div>
@@ -32,7 +35,7 @@
     {% comment %} </div> {% endcomment %}
     {% endfor %}
 </div>
-<a href="{% url 'new_review' %}">후기 남기기</a>
+
 <br>
 <br>
 {% endblock content %}
