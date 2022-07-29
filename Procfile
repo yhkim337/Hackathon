@@ -1,2 +1,1 @@
-
-web: gunicorn hackathon.wsgi --timeout 3000gi
+web: gunicorn hackathon.wsgi --log-file -
