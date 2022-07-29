@@ -262,12 +262,12 @@ def index(request):
     if request.method == "POST":
         financenews_data_dict = financenews_crawling()
         financedata_crawling()
-        soccer_news_crawling()
+        # soccer_news_crawling()
         worldsoccer_news_crawling()
-        baseball_news_crawling()
-        worldbaseball_news_crawling()
-        basketball_news_crawling()
-        esports_news_crawling()
+        # baseball_news_crawling()
+        # worldbaseball_news_crawling()
+        # basketball_news_crawling()
+        # esports_news_crawling()
         for m in financenews_data_dict:
             FinanceNewsData(title=m).save()
         return redirect('superviser')
