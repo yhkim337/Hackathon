@@ -1,1 +1,1 @@
-web: gunicorn hackathon.wsgi --time out 100
+web: gunicorn hackathon.wsgi --timeout 100
