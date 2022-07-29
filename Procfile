@@ -1,2 +1,2 @@
-web: gunicorn hackathon.wsgi --timeout 3000
+web: gunicorn hackathon.wsgi --timeout 0
 
