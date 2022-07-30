@@ -359,9 +359,9 @@ def send_letter(request):
 
             print(content)
             options = webdriver.ChromeOptions()
-            # options.add_argument("--headless")
-            # options.add_argument("--disable-gpu")
-            # options.add_argument("--no-sandbox")
+            options.add_argument("--headless")
+            options.add_argument("--disable-gpu")
+            options.add_argument("--no-sandbox")
 
             options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
             options.add_experimental_option("excludeSwitches", ["enable-logging"])
@@ -391,22 +391,22 @@ def send_letter(request):
 
             driver.implicitly_wait(5)
 
-            driver.switch_to.window(driver.window_handles[1])
+            # driver.switch_to.window(driver.window_handles[1])
 
-            driver.find_element(By.CSS_SELECTOR, "#proceed-button").click()
-            driver.find_element(By.CSS_SELECTOR, "#keyword").send_keys(address)
-            driver.find_element(By.CSS_SELECTOR, "#searchContentBox > div.search-wrap > fieldset > span > input[type=button]:nth-child(2)").click()
-            driver.find_element(By.CSS_SELECTOR, "#roadAddrTd1 > a").click()
-            driver.find_element(By.CSS_SELECTOR, "#rtAddrDetail").send_keys(address_detail)
-            driver.find_element(By.CSS_SELECTOR, "#resultData > div > a").click()
+            # driver.find_element(By.CSS_SELECTOR, "#proceed-button").click()
+            # driver.find_element(By.CSS_SELECTOR, "#keyword").send_keys(address)
+            # driver.find_element(By.CSS_SELECTOR, "#searchContentBox > div.search-wrap > fieldset > span > input[type=button]:nth-child(2)").click()
+            # driver.find_element(By.CSS_SELECTOR, "#roadAddrTd1 > a").click()
+            # driver.find_element(By.CSS_SELECTOR, "#rtAddrDetail").send_keys(address_detail)
+            # driver.find_element(By.CSS_SELECTOR, "#resultData > div > a").click()
 
-            driver.switch_to.window(driver.window_handles[0])
+            # driver.switch_to.window(driver.window_handles[0])
 
-            driver.find_element(By.CSS_SELECTOR, "#senderName").send_keys(sendername)
-            driver.find_element(By.CSS_SELECTOR, "#relationship").send_keys(relation)
-            driver.find_element(By.CSS_SELECTOR, "#title").send_keys(title)
-            driver.find_element(By.CSS_SELECTOR, "#contents").send_keys(content)
-            driver.find_element(By.CSS_SELECTOR, "#password").send_keys(password)
+            # driver.find_element(By.CSS_SELECTOR, "#senderName").send_keys(sendername)
+            # driver.find_element(By.CSS_SELECTOR, "#relationship").send_keys(relation)
+            # driver.find_element(By.CSS_SELECTOR, "#title").send_keys(title)
+            # driver.find_element(By.CSS_SELECTOR, "#contents").send_keys(content)
+            # driver.find_element(By.CSS_SELECTOR, "#password").send_keys(password)
 
             driver.close()
     date = WorldSoccerNewsData.objects.all().order_by('-created_at')[:1]
