@@ -13,7 +13,9 @@
     <div id="review-form">
         <form method="POST" action="{% url 'new_review' %}">
             {% csrf_token %}
-            <textarea id='review-text' name='content'></textarea>
+            <div id="review-write-container">
+            <textarea id="review-write" name='content'></textarea>
+            </div>
             <input type='submit' value='후기 남기기'></input>
         </form>
         {% csrf_token %}
